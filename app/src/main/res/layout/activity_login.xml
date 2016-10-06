@@ -10,37 +10,53 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#ffffff"
     tools:context="inf.ufg.br.mydoctor.ui.AuthenticationActivity">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/app_icon"/>
 
     <EditText
         android:id="@+id/login_email_field"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
         android:inputType="textEmailAddress"
-        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:gravity="center|left"
+        android:background="#00000000"
         android:hint="@string/e_mail" />
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="0.5dp"
+        android:background="#a7a3a3" />
 
     <EditText
         android:id="@+id/login_password_field"
         android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
         android:inputType="textPassword"
-        android:gravity="center"
+        android:background="#00000000"
+        android:gravity="center|left"
         android:hint="@string/password"/>
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="0.5dp"
+        android:background="#a7a3a3" />
 
     <RelativeLayout
         android:layout_width="100dp"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/login_submit_button"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="42dp"
-            android:text="Login"/>
+            android:text="Entrar"/>
 
     </RelativeLayout>
 

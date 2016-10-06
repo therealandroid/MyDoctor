@@ -2,6 +2,7 @@ package inf.ufg.br.mydoctor.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,12 +33,23 @@ public class RegisterActivity extends AppCompatActivity  implements AuthPresente
         authPresenter = new AuthPresenter();
         if(getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Cadastrar");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 
     @OnClick(R.id.register_submit_button) public void onSubmitClick(View view){
         User user = new User(firstName.getText().toString(), lastName.getText().toString(), password.getText().toString(), phone.getText().toString(), email.getText().toString());
         doRegister(user);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            super.onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     /***
