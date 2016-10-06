@@ -1,7 +1,7 @@
 package inf.ufg.br.mydoctor.business.services;
 
 import inf.ufg.br.mydoctor.business.models.User;
-import retrofit2.http.GET;
+import retrofit2.http.POST;
 import rx.Observable;
 
 /**
@@ -10,10 +10,10 @@ import rx.Observable;
 
 public interface AuthService {
 
-    @GET("/auth/login")
+    @POST("/auth/login")
     Observable<User> auth();
 
-    @GET("/auth/activity_register")
+    @POST("/auth/register")
     Observable<User> register();
 
 }

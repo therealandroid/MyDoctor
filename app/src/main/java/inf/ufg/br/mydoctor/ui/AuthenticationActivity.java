@@ -28,6 +28,7 @@ public class AuthenticationActivity extends AppCompatActivity  implements AuthPr
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         authPresenter = new AuthPresenter();
+
         if(getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Bem vindo ao MyDoctor");
         }

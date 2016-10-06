@@ -29,9 +29,8 @@ public class AuthPresenter {
         body.put("password", Encrypt.toMd5(password));
 
         retrofit.create(AuthService.class).auth()
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .unsubscribeOn(Schedulers.io())
                 .subscribe(new Observer<User>() {
                     @Override
                     public void onCompleted() {

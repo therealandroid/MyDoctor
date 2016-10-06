@@ -4,84 +4,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    android:gravity="center">
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Todos os campos abaixo são obrigatórios"/>
 
     <EditText
         android:id="@+id/register_first_name_field"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="52dp"
         android:background="#00000000"
         android:inputType="textEmailAddress"
         android:gravity="center|left"
-        android:hint="@string/first_name" />
+        android:hint="@string/first_name"
+        android:textColorHint="@android:color/darker_gray"
+        android:layout_marginTop="32dp"/>
 
     <View
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="0.5dp"
         android:background="#a7a3a3" />
 
     <EditText
         android:id="@+id/register_last_name_field"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="52dp"
         android:background="#00000000"
         android:gravity="center|left"
+        android:textColorHint="@android:color/darker_gray"
         android:hint="@string/last_name" />
 
     <View
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="0.5dp"
         android:background="#a7a3a3" />
 
     <EditText
         android:id="@+id/register_email_field"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="52dp"
         android:background="#00000000"
         android:gravity="center|left"
+        android:textColorHint="@android:color/darker_gray"
         android:hint="@string/e_mail" />
 
     <View
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="0.5dp"
         android:background="#a7a3a3" />
 
     <EditText
         android:id="@+id/register_phone_field"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="52dp"
         android:background="#00000000"
         android:gravity="center|left"
+        android:textColorHint="@android:color/darker_gray"
         android:hint="@string/phone" />
 
     <View
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="0.5dp"
         android:background="#a7a3a3" />
 
     <EditText
         android:id="@+id/register_password_field"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="52dp"
         android:background="#00000000"
         android:inputType="textPassword"
         android:gravity="center|left"
+        android:textColorHint="@android:color/darker_gray"
         android:hint="@string/password"/>
 
     <View
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="0.5dp"
         android:background="#a7a3a3" />
 
     <RelativeLayout
         android:layout_width="120dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="26dp"
         android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/register_submit_button"
             android:layout_width="120dp"
-            android:layout_height="42dp"
+            android:layout_height="48dp"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
             android:text="Cadastrar"/>
 
     </RelativeLayout>

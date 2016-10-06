@@ -9,13 +9,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:background="#ffffff"
     tools:context="inf.ufg.br.mydoctor.ui.AuthenticationActivity">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:layout_marginTop="26dp"
         android:src="@drawable/app_icon"/>
 
     <EditText
@@ -55,7 +56,9 @@
         <Button
             android:id="@+id/login_submit_button"
             android:layout_width="100dp"
-            android:layout_height="42dp"
+            android:layout_height="48dp"
+            android:background="@color/colorPrimary"
+            android:textColor="#ffffff"
             android:text="Entrar"/>
 
     </RelativeLayout>
@@ -64,12 +67,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Não possui cadastro?"
-        android:layout_marginTop="6dp"/>
+        android:textSize="14sp"
+        android:layout_marginTop="16dp"/>
 
     <TextView
         android:id="@+id/login_go_to_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
+        android:textSize="15sp"
         android:text="Clique aqui"/>
 </LinearLayout>
