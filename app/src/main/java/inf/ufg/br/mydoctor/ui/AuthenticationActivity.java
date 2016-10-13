@@ -29,7 +29,7 @@ public class AuthenticationActivity extends AppCompatActivity  implements AuthPr
         ButterKnife.bind(this);
         authPresenter = new AuthPresenter();
         if(getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Bem vindo ao MyDoctor");
+            getSupportActionBar().setTitle("MyDoctor");
         }
     }
 
