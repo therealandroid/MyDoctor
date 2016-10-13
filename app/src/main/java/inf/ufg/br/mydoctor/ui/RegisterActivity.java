@@ -31,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity  implements AuthPresente
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
         authPresenter = new AuthPresenter();
+
         if(getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Cadastrar");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -57,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity  implements AuthPresente
      *
      * @param user
      */
-    private void doRegister(User user){
+    private void doRegister(User user) {
         submit.setEnabled(false);
         authPresenter.registerUser(user, this);
     }
