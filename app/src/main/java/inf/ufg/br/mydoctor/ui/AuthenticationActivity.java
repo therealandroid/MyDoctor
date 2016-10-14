@@ -30,7 +30,7 @@ public class AuthenticationActivity extends AppCompatActivity  implements AuthPr
         authPresenter = new AuthPresenter();
 
         if(getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Bem vindo ao MyDoctor");
+            getSupportActionBar().setTitle("MyDoctor");
         }
     }
 
