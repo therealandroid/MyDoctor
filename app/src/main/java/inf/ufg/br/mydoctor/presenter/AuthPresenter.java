@@ -1,15 +1,20 @@
 package inf.ufg.br.mydoctor.presenter;
 
+import android.app.Activity;
+
 import java.util.HashMap;
 
-import inf.ufg.br.mydoctor.business.api.ApiManager;
-import inf.ufg.br.mydoctor.business.models.User;
-import inf.ufg.br.mydoctor.business.services.AuthService;
+import javax.inject.Inject;
+
+import inf.ufg.br.mydoctor.utils.AndroidApplication;
 import inf.ufg.br.mydoctor.utils.security.Encrypt;
+import models.User;
 import retrofit2.Retrofit;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import services.AuthService;
+
 
 /**
  * Created by diogojayme on 10/4/16.
@@ -17,10 +22,12 @@ import rx.schedulers.Schedulers;
 
 public class AuthPresenter {
 
+    @Inject
     Retrofit retrofit;
 
-    public AuthPresenter(){
-        this.retrofit = ApiManager.getInstance();
+    public AuthPresenter(Activity activity){
+        ((AndroidApplication) activity.getApplication()).component().inject(this);
+        int a = 1;
     }
 
     public void authUser(String email, String password, final AuthCallback callback) {

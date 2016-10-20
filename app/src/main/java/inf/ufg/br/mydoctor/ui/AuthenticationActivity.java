@@ -11,8 +11,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import inf.ufg.br.mydoctor.R;
-import inf.ufg.br.mydoctor.business.models.User;
 import inf.ufg.br.mydoctor.presenter.AuthPresenter;
+import inf.ufg.br.mydoctor.utils.IntentProxy;
+import models.User;
 
 public class AuthenticationActivity extends AppCompatActivity  implements AuthPresenter.AuthCallback{
 
@@ -27,7 +28,7 @@ public class AuthenticationActivity extends AppCompatActivity  implements AuthPr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        authPresenter = new AuthPresenter();
+        authPresenter = new AuthPresenter(this);
 
         if(getSupportActionBar() != null) {
             getSupportActionBar().setTitle("MyDoctor");
@@ -48,7 +49,7 @@ public class AuthenticationActivity extends AppCompatActivity  implements AuthPr
      * @param username or email
      * @param password
      */
-    private void doLogin(String username, String password){
+    private void  doLogin(String username, String password){
         submit.setEnabled(false);
         authPresenter.authUser(username, password, this);
     }
@@ -56,6 +57,7 @@ public class AuthenticationActivity extends AppCompatActivity  implements AuthPr
     @Override
     public void showUser(User user) {
         submit.setText("Sucesso");
+        IntentProxy.loginToHome(this, "username", user.getFirstName());
     }
 
     @Override

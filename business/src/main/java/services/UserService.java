@@ -1,4 +1,4 @@
-package inf.ufg.br.mydoctor.business.services;
+package services;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package inf.ufg.br.mydoctor.business.models;
+package models;
 
 /**
  * Created by diogojayme on 10/13/16.

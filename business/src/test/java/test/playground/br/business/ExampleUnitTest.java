@@ -1,4 +1,4 @@
-package inf.ufg.br.mydoctor;
+package test.playground.br.business;
 
 import org.junit.Test;
 

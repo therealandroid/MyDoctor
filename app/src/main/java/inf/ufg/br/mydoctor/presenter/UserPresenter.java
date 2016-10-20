@@ -2,13 +2,12 @@ package inf.ufg.br.mydoctor.presenter;
 
 import java.util.HashMap;
 
-import inf.ufg.br.mydoctor.business.api.ApiManager;
-import inf.ufg.br.mydoctor.business.models.User;
-import inf.ufg.br.mydoctor.business.services.UserService;
+import models.User;
 import retrofit2.Retrofit;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import services.UserService;
 
 /**
  * Created by diogojayme on 10/13/16.
@@ -18,7 +17,6 @@ public class UserPresenter {
     Retrofit retrofit;
 
     public UserPresenter(){
-        this.retrofit = ApiManager.getInstance();
     }
 
     public interface EditUserCallback{

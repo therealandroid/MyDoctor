@@ -1,6 +1,6 @@
-package inf.ufg.br.mydoctor.business.services;
+package services;
 
-import inf.ufg.br.mydoctor.business.models.User;
+import models.User;
 import retrofit2.http.POST;
 import rx.Observable;
 
