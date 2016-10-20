@@ -1,4 +1,4 @@
-package inf.ufg.br.mydoctor;
+package inf.ufg.br.mydoctor.utils;
 
 /**
  * Created by diogojayme on 10/20/16.

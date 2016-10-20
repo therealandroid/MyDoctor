@@ -11,7 +11,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import inf.ufg.br.mydoctor.R;
-import inf.ufg.br.mydoctor.presenter.AuthPresenter;
+import inf.ufg.br.mydoctor.domain.presenter.AuthPresenter;
 import models.User;
 
 public class RegisterActivity extends AppCompatActivity  implements AuthPresenter.AuthCallback{
@@ -30,7 +30,6 @@ public class RegisterActivity extends AppCompatActivity  implements AuthPresente
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-        authPresenter = new AuthPresenter(this);
 
         if(getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Cadastrar");

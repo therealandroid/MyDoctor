@@ -1,12 +1,7 @@
-package inf.ufg.br.mydoctor.presenter;
-
-import android.app.Activity;
+package inf.ufg.br.mydoctor.domain.presenter;
 
 import java.util.HashMap;
 
-import javax.inject.Inject;
-
-import inf.ufg.br.mydoctor.utils.AndroidApplication;
 import inf.ufg.br.mydoctor.utils.security.Encrypt;
 import models.User;
 import retrofit2.Retrofit;
@@ -22,12 +17,10 @@ import services.AuthService;
 
 public class AuthPresenter {
 
-    @Inject
     Retrofit retrofit;
 
-    public AuthPresenter(Activity activity){
-        ((AndroidApplication) activity.getApplication()).component().inject(this);
-        int a = 1;
+    public AuthPresenter(Retrofit r){
+        this.retrofit = r;
     }
 
     public void authUser(String email, String password, final AuthCallback callback) {

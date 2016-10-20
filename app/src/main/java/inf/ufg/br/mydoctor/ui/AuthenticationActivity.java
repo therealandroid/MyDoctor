@@ -7,11 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import inf.ufg.br.mydoctor.R;
-import inf.ufg.br.mydoctor.presenter.AuthPresenter;
+import inf.ufg.br.mydoctor.domain.presenter.AuthPresenter;
+import inf.ufg.br.mydoctor.utils.AndroidApplication;
 import inf.ufg.br.mydoctor.utils.IntentProxy;
 import models.User;
 
@@ -21,14 +24,14 @@ public class AuthenticationActivity extends AppCompatActivity  implements AuthPr
     @BindView(R.id.login_password_field) EditText password;
     @BindView(R.id.login_submit_button) Button submit;
 
-    AuthPresenter authPresenter;
+    @Inject AuthPresenter authPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        authPresenter = new AuthPresenter(this);
+        ((AndroidApplication) getApplication()).component().inject(this);
 
         if(getSupportActionBar() != null) {
             getSupportActionBar().setTitle("MyDoctor");

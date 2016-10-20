@@ -2,9 +2,8 @@ package inf.ufg.br.mydoctor.utils;
 
 import android.app.Application;
 
-import inf.ufg.br.mydoctor.Constants;
-import inf.ufg.br.mydoctor.component.DaggerNetComponent;
-import inf.ufg.br.mydoctor.component.NetComponent;
+import inf.ufg.br.mydoctor.domain.component.NetworkComponent;
+import inf.ufg.br.mydoctor.domain.component.DaggerNetworkComponent;
 import module.NetModule;
 
 /**
@@ -13,20 +12,20 @@ import module.NetModule;
 
 public class AndroidApplication extends Application {
 
-    NetComponent netComponent;
+    NetworkComponent networkComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        netComponent = DaggerNetComponent
+        networkComponent = DaggerNetworkComponent
                 .builder()
                 .netModule(new NetModule(Constants.BASE_URL))
                 .build();
-
     }
 
 
-    public NetComponent component() {
-        return this.netComponent;
+    public NetworkComponent component() {
+        return this.networkComponent;
     }
+
 }

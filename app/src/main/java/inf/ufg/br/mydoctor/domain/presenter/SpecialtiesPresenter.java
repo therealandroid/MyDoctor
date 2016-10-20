@@ -1,4 +1,4 @@
-package inf.ufg.br.mydoctor.presenter;
+package inf.ufg.br.mydoctor.domain.presenter;
 
 import java.util.List;
 
