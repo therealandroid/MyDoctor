@@ -1,15 +1,15 @@
-package inf.ufg.br.mydoctor.presenter;
+package inf.ufg.br.mydoctor.domain.presenter;
 
 import java.util.HashMap;
 
-import inf.ufg.br.mydoctor.business.api.ApiManager;
-import inf.ufg.br.mydoctor.business.models.User;
-import inf.ufg.br.mydoctor.business.services.AuthService;
 import inf.ufg.br.mydoctor.utils.security.Encrypt;
+import models.User;
 import retrofit2.Retrofit;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import services.AuthService;
+
 
 /**
  * Created by diogojayme on 10/4/16.
@@ -19,8 +19,8 @@ public class AuthPresenter {
 
     Retrofit retrofit;
 
-    public AuthPresenter(){
-        this.retrofit = ApiManager.getInstance();
+    public AuthPresenter(Retrofit r){
+        this.retrofit = r;
     }
 
     public void authUser(String email, String password, final AuthCallback callback) {
@@ -29,9 +29,8 @@ public class AuthPresenter {
         body.put("password", Encrypt.toMd5(password));
 
         retrofit.create(AuthService.class).auth()
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .unsubscribeOn(Schedulers.io())
                 .subscribe(new Observer<User>() {
                     @Override
                     public void onCompleted() {

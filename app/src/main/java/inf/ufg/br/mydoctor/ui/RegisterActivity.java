@@ -2,6 +2,7 @@ package inf.ufg.br.mydoctor.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,8 +11,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import inf.ufg.br.mydoctor.R;
-import inf.ufg.br.mydoctor.business.models.User;
-import inf.ufg.br.mydoctor.presenter.AuthPresenter;
+import inf.ufg.br.mydoctor.domain.presenter.AuthPresenter;
+import models.User;
 
 public class RegisterActivity extends AppCompatActivity  implements AuthPresenter.AuthCallback{
 
@@ -29,9 +30,11 @@ public class RegisterActivity extends AppCompatActivity  implements AuthPresente
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
-        authPresenter = new AuthPresenter();
+
         if(getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Cadastrar");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 
@@ -40,12 +43,21 @@ public class RegisterActivity extends AppCompatActivity  implements AuthPresente
         doRegister(user);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            super.onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     /***
      * Registrar usuário [RF-02 register]
      *
      * @param user
      */
-    private void doRegister(User user){
+    private void doRegister(User user) {
         submit.setEnabled(false);
         authPresenter.registerUser(user, this);
     }

@@ -1,4 +1,4 @@
-package inf.ufg.br.mydoctor.business.models;
+package models;
 
 import com.google.gson.annotations.SerializedName;
 
