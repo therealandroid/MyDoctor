@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import inf.ufg.br.mydoctor.utils.security.Encrypt;
 import models.User;
-import retrofit2.Retrofit;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -17,10 +16,10 @@ import services.AuthService;
 
 public class AuthPresenter {
 
-    Retrofit retrofit;
+    AuthService authService;
 
-    public AuthPresenter(Retrofit r){
-        this.retrofit = r;
+    public AuthPresenter(AuthService authService){
+        this.authService = authService;
     }
 
     public void authUser(String email, String password, final AuthCallback callback) {
@@ -28,7 +27,7 @@ public class AuthPresenter {
         body.put("email", email);
         body.put("password", Encrypt.toMd5(password));
 
-        retrofit.create(AuthService.class).auth()
+        authService.auth()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<User>() {
@@ -52,7 +51,7 @@ public class AuthPresenter {
     public void registerUser(User user, final AuthCallback callback) {
         HashMap<String, String> body = new HashMap<>();
 
-        retrofit.create(AuthService.class).register()
+        authService.register()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .unsubscribeOn(Schedulers.io())

@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import inf.ufg.br.mydoctor.R;
 import inf.ufg.br.mydoctor.domain.presenter.AuthPresenter;
-import inf.ufg.br.mydoctor.utils.AndroidApplication;
+import inf.ufg.br.mydoctor.AndroidApplication;
 import inf.ufg.br.mydoctor.utils.IntentProxy;
 import models.User;
 
@@ -31,11 +31,15 @@ public class AuthenticationActivity extends AppCompatActivity  implements AuthPr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        ((AndroidApplication) getApplication()).component().inject(this);
+        injectDependencies();
 
         if(getSupportActionBar() != null) {
             getSupportActionBar().setTitle("MyDoctor");
         }
+    }
+
+    private void injectDependencies(){
+        ((AndroidApplication) getApplication()).component().inject(this);
     }
 
     @OnClick(R.id.login_submit_button) public void onSubmitClick(View view){

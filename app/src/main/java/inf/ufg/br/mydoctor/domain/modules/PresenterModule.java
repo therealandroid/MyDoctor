@@ -3,7 +3,7 @@ package inf.ufg.br.mydoctor.domain.modules;
 import dagger.Module;
 import dagger.Provides;
 import inf.ufg.br.mydoctor.domain.presenter.AuthPresenter;
-import retrofit2.Retrofit;
+import services.AuthService;
 
 /**
  * Created by diogojayme on 10/20/16.
@@ -13,7 +13,7 @@ import retrofit2.Retrofit;
 public class PresenterModule {
 
     @Provides
-    public AuthPresenter provideAuthPresenter(Retrofit retrofit){
-        return new AuthPresenter(retrofit);
+    public AuthPresenter provideAuthPresenter(AuthService authService){
+        return new AuthPresenter(authService);
     }
 }
