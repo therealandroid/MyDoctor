@@ -2,6 +2,7 @@ package inf.ufg.br.mydoctor.notification;
 
 import android.util.Log;
 
+import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 
@@ -9,7 +10,7 @@ import com.google.firebase.messaging.RemoteMessage;
  * Created by diogojayme on 10/21/16.
  */
 
-public class MyFirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService{
+public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {

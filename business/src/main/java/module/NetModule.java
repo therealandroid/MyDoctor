@@ -1,17 +1,10 @@
 package module;
 
-import android.content.SharedPreferences;
-
-import java.io.IOException;
-
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -31,23 +24,10 @@ public class NetModule {
 
     @Provides
     @Singleton
-    OkHttpClient provideHttpClient(final SharedPreferences sharedPreferences) {
+    OkHttpClient provideHttpClient() {
         OkHttpClient okHttpClient = new OkHttpClient();
-        okHttpClient.interceptors().add(new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-                String token = sharedPreferences.getString("token", null);
-                Request original = chain.request();
-                Request.Builder requestBuilder = original.newBuilder()
-                        .header("Authorization", token)
-                        .method(original.method(), original.body());
-                Request request = requestBuilder.build();
-                return chain.proceed(request);
-            }
-        });
         return okHttpClient;
     }
-
 
     @Provides
     @Singleton
