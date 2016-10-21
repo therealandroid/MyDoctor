@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "543678999559",
+    "firebase_url": "https://hidden-sunlight-622.firebaseio.com",
+    "project_id": "hidden-sunlight-622",
+    "storage_bucket": "hidden-sunlight-622.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543678999559:android:70546dc058fb4744",
+        "android_client_info": {
+          "package_name": "inf.ufg.br.mydoctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543678999559-vu3edaju11at8mpqf9o4l4n9hk08ums4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6V5GOCaF6gayCGtEq99z3WhjLFrm_nVY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
