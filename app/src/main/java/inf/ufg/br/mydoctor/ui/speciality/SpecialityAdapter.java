@@ -12,15 +12,15 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import inf.ufg.br.mydoctor.R;
-import models.Speciality;
+import models.Specialties;
 
 /**
  * Created by bruno.andrade on 24/11/2016.
  */
-class SpecialityAdapter extends RecyclerView.Adapter<SpecialityAdapter.SpecialityHolder>{
+class SpecialityAdapter extends RecyclerView.Adapter{
 
     Context context;
-    List<Speciality> specialityList;
+    List<Specialties> specialtiesList;
 
     SpecialityAdapter(Context context) {
         this.context = context;
@@ -28,31 +28,30 @@ class SpecialityAdapter extends RecyclerView.Adapter<SpecialityAdapter.Specialit
 
     @Override
     public SpecialityAdapter.SpecialityHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_speciality, parent);
-        return new SpecialityHolder(view);
+        return new SpecialityHolder(LayoutInflater.from(context).inflate(R.layout.item_speciality, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(SpecialityAdapter.SpecialityHolder holder, int position) {
-        Speciality speciality = specialityList.get(position);
-        holder.specialityName.setText(speciality.getName());
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        SpecialityHolder specialityHolder = (SpecialityHolder ) holder;
+        Specialties specialties = specialtiesList.get(position);
+        specialityHolder.specialityName.setText(specialties.getName());
     }
 
-    void setSpecialityList(List<Speciality> specialityList) {
-        this.specialityList = specialityList;
-        this.notifyDataSetChanged();
+    void setSpecialtiesList(List<Specialties> specialtiesList) {
+        this.specialtiesList = specialtiesList;
     }
 
     @Override
     public int getItemCount() {
-        return specialityList.size();
+        return specialtiesList.size();
     }
 
-    class SpecialityHolder extends RecyclerView.ViewHolder{
+    public class SpecialityHolder extends RecyclerView.ViewHolder{
 
         @BindView(R.id.speciality_name) TextView specialityName;
 
-        SpecialityHolder(View itemView) {
+        public SpecialityHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

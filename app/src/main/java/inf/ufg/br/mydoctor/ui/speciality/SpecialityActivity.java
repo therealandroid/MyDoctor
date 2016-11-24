@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 import inf.ufg.br.mydoctor.AndroidApplication;
 import inf.ufg.br.mydoctor.R;
 import inf.ufg.br.mydoctor.domain.presenter.SpecialtiesPresenter;
-import models.Speciality;
+import models.Specialties;
 
 public class SpecialityActivity extends AppCompatActivity implements SpecialtiesPresenter.SpecialitiesCallback {
 
@@ -30,9 +30,8 @@ public class SpecialityActivity extends AppCompatActivity implements Specialties
         setContentView(R.layout.activity_speciality);
         ButterKnife.bind(this);
         ((AndroidApplication) getApplication()).component().inject(this);
-        initializeList();
+
         loadSpecialities();
-        adapter = new SpecialityAdapter(this);
         getSupportActionBar().setTitle("Escolha a especialidade médica");
     }
 
@@ -40,24 +39,20 @@ public class SpecialityActivity extends AppCompatActivity implements Specialties
         specialtiesPresenter.loadLocals(this);
     }
 
-    private void initializeList() {
-        specialityRecylerView.setAdapter(adapter);
-        specialityRecylerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-    }
-
     @Override
-    public void onLoadSuccess(List<Speciality> locals) {
-        adapter.setSpecialityList(locals);
+    public void onLoadSuccess(List<Specialties> locals) {
+        adapter = new SpecialityAdapter(this);
+        specialityRecylerView.setLayoutManager(new LinearLayoutManager(this));
+        specialityRecylerView.setAdapter(adapter);
+        adapter.setSpecialtiesList(locals);
+        adapter.notifyDataSetChanged();
     }
 
     @Override
     public void onLoadFailed(String message) {
-        System.out.println();
     }
 
     @Override
     public void onLoadFinished() {
-        System.out.println();
-        adapter.notifyDataSetChanged();
     }
 }

@@ -3,8 +3,7 @@ package inf.ufg.br.mydoctor.domain.presenter;
 import java.util.List;
 
 
-import models.Speciality;
-import retrofit2.Retrofit;
+import models.Specialties;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -26,7 +25,7 @@ public class SpecialtiesPresenter {
         specialitiesService.loadSpecialities()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<Speciality>>() {
+                .subscribe(new Observer<List<Specialties>>() {
                     @Override
                     public void onCompleted() {
                         callback.onLoadFinished();
@@ -38,14 +37,14 @@ public class SpecialtiesPresenter {
                     }
 
                     @Override
-                    public void onNext(List<Speciality> locals) {
+                    public void onNext(List<Specialties> locals) {
                         callback.onLoadSuccess(locals);
                     }
                 });
     }
 
     public interface SpecialitiesCallback{
-        void onLoadSuccess(List<Speciality> locals);
+        void onLoadSuccess(List<Specialties> locals);
         void onLoadFailed(String message);
         void onLoadFinished();
     }

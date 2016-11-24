@@ -43,7 +43,7 @@
         <activity
             android:name=".ui.UpdateProfileActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.speciality.SpecialityActivity" />
+        <activity android:name=".ui.specialties.SpecialityActivity" />
         <activity android:name=".ui.locals.LocalsActivity"></activity>
 
     </application>
