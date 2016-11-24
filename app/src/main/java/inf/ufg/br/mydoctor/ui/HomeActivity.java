@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import inf.ufg.br.mydoctor.R;
+import inf.ufg.br.mydoctor.ui.profile.UpdateProfileActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
