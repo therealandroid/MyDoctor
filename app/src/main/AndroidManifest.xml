@@ -14,13 +14,11 @@
         <activity
             android:name=".ui.AuthenticationActivity"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".ui.HomeActivity"
@@ -37,6 +35,16 @@
             android:screenOrientation="portrait">
 
         </activity>
+
+
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.UpdateProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.speciality.SpecialityActivity" />
+        <activity android:name=".ui.locals.LocalsActivity"></activity>
 
     </application>
 

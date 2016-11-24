@@ -223,12 +223,6 @@
                     android:layout_height="100dp"
                     android:layout_centerHorizontal="true" />
 
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/shadow" />
-
             </RelativeLayout>
 
             <RelativeLayout

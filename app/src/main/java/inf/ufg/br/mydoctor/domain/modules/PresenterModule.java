@@ -5,11 +5,13 @@ import dagger.Provides;
 import inf.ufg.br.mydoctor.domain.presenter.AuthPresenter;
 import inf.ufg.br.mydoctor.domain.presenter.LocalPresenter;
 import inf.ufg.br.mydoctor.domain.presenter.SpecialtiesPresenter;
+
 import inf.ufg.br.mydoctor.domain.presenter.UserPresenter;
 import services.AuthService;
 import services.LocalService;
 import services.SpecialitiesService;
 import services.UserService;
+import retrofit2.Retrofit;
 
 /**
  * Created by diogojayme on 10/20/16.
@@ -37,4 +39,5 @@ public class PresenterModule {
     public UserPresenter provideUserPresenter(UserService userService){
         return new UserPresenter(userService);
     }
+
 }

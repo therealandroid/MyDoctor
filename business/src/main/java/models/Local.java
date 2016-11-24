@@ -5,6 +5,8 @@ package models;
  */
 
 public class Local {
+
+
     private int id;
     private String name;
     private String address;

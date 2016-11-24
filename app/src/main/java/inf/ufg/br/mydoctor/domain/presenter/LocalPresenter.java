@@ -20,8 +20,8 @@ public class LocalPresenter {
         this.localService = localService;
     }
 
-    public void loadLocals(final LocalCallback callback) {
-        localService.loadLocals()
+    public void loadLocals(long id, final LocalCallback callback) {
+        localService.loadLocals(id)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<List<Local>>() {

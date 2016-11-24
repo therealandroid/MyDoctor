@@ -63,7 +63,6 @@
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/white"
             android:layout_below="@+id/login_password_field"
-            android:background="@color/colorPrimary"
             android:text="Login" />
 
 

@@ -2,7 +2,7 @@ package services;
 
 import java.util.List;
 
-import models.Specialties;
+import models.Speciality;
 import retrofit2.http.GET;
 import rx.Observable;
 
@@ -13,5 +13,5 @@ import rx.Observable;
 public interface SpecialitiesService {
 
     @GET("/specialities")
-    Observable<List<Specialties>> loadSpecialities();
+    Observable<List<Speciality>> loadSpecialities();
 }

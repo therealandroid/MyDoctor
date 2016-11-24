@@ -1,8 +1,8 @@
 package inf.ufg.br.mydoctor.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,6 +11,9 @@ import butterknife.OnClick;
 import inf.ufg.br.mydoctor.R;
 import inf.ufg.br.mydoctor.ui.appointment.AppointmentActivity;
 import inf.ufg.br.mydoctor.ui.profile.UpdateProfileActivity;
+import inf.ufg.br.mydoctor.ui.speciality.SpecialityActivity;
+import retrofit2.http.HEAD;
+
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -41,5 +44,10 @@ public class HomeActivity extends AppCompatActivity {
 
     private void updateProfile() {
         startActivity(new Intent(this, UpdateProfileActivity.class));
+    }
+
+    @OnClick(R.id.book_container)
+    public void onAgendaClick(){
+        startActivity(new Intent(HomeActivity.this, SpecialityActivity.class));
     }
 }
