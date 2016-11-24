@@ -23,25 +23,17 @@
         </activity>
         <activity
             android:name=".ui.HomeActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
-
-        <activity android:name=".ui.RegisterActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".ui.profile.UpdateProfileActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
-
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.profile.UpdateProfileActivity"
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".ui.speciality.SpecialityActivity" />
-
-        <activity android:name=".ui.locals.LocalsActivity"/>
-
-        <activity android:name=".ui.doctors.DoctorsActivity"/>
-
-
+        <activity android:name=".ui.locals.LocalsActivity" />
+        <activity android:name=".ui.doctors.DoctorsActivity" />
+        <activity android:name=".ui.dateandtime.ChooseDateActivity"></activity>
     </application>
 
 </manifest>

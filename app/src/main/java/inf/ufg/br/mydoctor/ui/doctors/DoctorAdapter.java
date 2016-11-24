@@ -1,6 +1,7 @@
 package inf.ufg.br.mydoctor.ui.doctors;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import inf.ufg.br.mydoctor.R;
+import inf.ufg.br.mydoctor.ui.dateandtime.ChooseDateActivity;
 import models.User;
 
 /**
@@ -55,6 +57,13 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.LocalViewH
         public LocalViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            final Context context = itemView.getContext();
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context, ChooseDateActivity.class));
+                }
+            });
         }
     }
 }
