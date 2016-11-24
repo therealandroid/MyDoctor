@@ -5,6 +5,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 import inf.ufg.br.mydoctor.domain.modules.ApplicationModule;
 import inf.ufg.br.mydoctor.domain.modules.PresenterModule;
+import inf.ufg.br.mydoctor.ui.appointment.AppointmentFragment;
 import inf.ufg.br.mydoctor.ui.AuthenticationActivity;
 import module.ApiModule;
 import module.NetModule;
@@ -17,4 +18,5 @@ import module.NetModule;
 @Component(modules = {ApplicationModule.class, NetModule.class, PresenterModule.class, ApiModule.class})
 public interface ApiComponent {
     void inject(AuthenticationActivity authenticationActivity);
+    void inject(AppointmentFragment fragment);
 }

@@ -10,6 +10,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class AppointmentPagerAdapter extends FragmentPagerAdapter {
 
+    public static final int SPECIALITIES = 0;
+    public static final int LOCAL = 1;
+    public static final int DOCTORS = 2;
+
     public static final int TOTAL_ITEMS = 3;
 
     public AppointmentPagerAdapter(FragmentManager fm) {
@@ -18,7 +22,7 @@ public class AppointmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return null;
+        return AppointmentFragment.getInstance(position);
     }
 
     @Override

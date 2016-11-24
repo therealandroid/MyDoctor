@@ -14,9 +14,10 @@ public class User {
     @SerializedName("last_name")
     private String lastName;
 
-    private String password;
+    private long crm;
     private String phone;
     private String email;
+    private String password;
 
     public User(String firstName, String lastName, String password, String phone, String email) {
         this.id = System.currentTimeMillis();
@@ -33,6 +34,14 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getCrm() {
+        return crm;
+    }
+
+    public void setCrm(long crm) {
+        this.crm = crm;
     }
 
     public String getFirstName() {

@@ -3,7 +3,6 @@ package inf.ufg.br.mydoctor.domain.presenter;
 import java.util.List;
 
 import models.Specialties;
-import retrofit2.Retrofit;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -14,13 +13,14 @@ import services.SpecialitiesService;
  */
 
 public class SpecialtiesPresenter {
-    Retrofit retrofit;
+    SpecialitiesService specialitiesService;
 
-    public SpecialtiesPresenter(){
+    public SpecialtiesPresenter(SpecialitiesService specialitiesService){
+        this.specialitiesService = specialitiesService;
     }
 
     public void loadLocals(final SpecialitiesCallback callback) {
-        retrofit.create(SpecialitiesService.class).loadSpecialities()
+        specialitiesService.loadSpecialities()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<List<Specialties>>() {

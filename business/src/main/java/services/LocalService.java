@@ -12,6 +12,6 @@ import rx.Observable;
 
 public interface LocalService {
 
-    @GET("/locals")
+    @GET("/locals/{specialist_id}/")
     Observable<List<Local>> loadLocals();
 }

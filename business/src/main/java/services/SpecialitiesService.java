@@ -12,6 +12,6 @@ import rx.Observable;
 
 public interface SpecialitiesService {
 
-    @GET("/locals/1/specialties")
+    @GET("/specialities")
     Observable<List<Specialties>> loadSpecialities();
 }
