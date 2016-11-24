@@ -25,26 +25,23 @@
             android:screenOrientation="portrait">
 
         </activity>
+
         <activity android:name=".ui.RegisterActivity"
             android:screenOrientation="portrait"/>
+
         <activity android:name=".ui.profile.UpdateProfileActivity"
             android:screenOrientation="portrait">
 
         </activity>
+
         <activity android:name=".ui.appointment.AppointmentActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
+        <activity android:name=".ui.speciality.SpecialityActivity" />
 
-        <activity
-            android:name=".ui.RegisterActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.UpdateProfileActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.specialties.SpecialityActivity" />
-        <activity android:name=".ui.locals.LocalsActivity"></activity>
+        <activity android:name=".ui.locals.LocalsActivity"/>
 
     </application>
 
