@@ -34,14 +34,11 @@
 
         </activity>
 
-        <activity android:name=".ui.appointment.AppointmentActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
-
         <activity android:name=".ui.speciality.SpecialityActivity" />
 
         <activity android:name=".ui.locals.LocalsActivity"/>
+
+        <activity android:name=".ui.doctors.DoctorsActivity"/>
 
     </application>
 

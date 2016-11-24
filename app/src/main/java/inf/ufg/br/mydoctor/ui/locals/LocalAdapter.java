@@ -1,6 +1,7 @@
 package inf.ufg.br.mydoctor.ui.locals;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import inf.ufg.br.mydoctor.R;
+import inf.ufg.br.mydoctor.ui.doctors.DoctorsActivity;
 import models.Local;
 
 /**
@@ -45,7 +47,7 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalViewHol
 
     @Override
     public int getItemCount() {
-        return locals.size();
+        return locals == null ? 0 : locals.size();
     }
 
     class LocalViewHolder extends RecyclerView.ViewHolder{
@@ -55,6 +57,13 @@ public class LocalAdapter extends RecyclerView.Adapter<LocalAdapter.LocalViewHol
         public LocalViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            final Context context = itemView.getContext();
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context, DoctorsActivity.class));
+                }
+            });
         }
     }
 }

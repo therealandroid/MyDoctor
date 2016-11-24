@@ -9,10 +9,8 @@ import android.view.MenuItem;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import inf.ufg.br.mydoctor.R;
-import inf.ufg.br.mydoctor.ui.appointment.AppointmentActivity;
 import inf.ufg.br.mydoctor.ui.profile.UpdateProfileActivity;
 import inf.ufg.br.mydoctor.ui.speciality.SpecialityActivity;
-import retrofit2.http.HEAD;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -24,8 +22,9 @@ public class HomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.book_container) public void onBookClick(){
-        startActivity(new Intent(this, AppointmentActivity.class));
+    @OnClick(R.id.book_container)
+    public void onBookClick() {
+
     }
 
     @Override
@@ -36,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.action_settings){
+        if (item.getItemId() == R.id.action_settings) {
             updateProfile();
         }
         return super.onOptionsItemSelected(item);
@@ -47,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.book_container)
-    public void onAgendaClick(){
+    public void onAgendaClick() {
         startActivity(new Intent(HomeActivity.this, SpecialityActivity.class));
     }
 }

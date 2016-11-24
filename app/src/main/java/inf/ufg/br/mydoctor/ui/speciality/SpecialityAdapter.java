@@ -1,6 +1,7 @@
 package inf.ufg.br.mydoctor.ui.speciality;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import inf.ufg.br.mydoctor.R;
+import inf.ufg.br.mydoctor.ui.locals.LocalsActivity;
 import models.Specialties;
 
 /**
@@ -51,9 +53,17 @@ class SpecialityAdapter extends RecyclerView.Adapter{
 
         @BindView(R.id.speciality_name) TextView specialityName;
 
-        public SpecialityHolder(View itemView) {
+        public SpecialityHolder(final View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    itemView.getContext().startActivity(new Intent(itemView.getContext(), LocalsActivity.class));
+                }
+            });
         }
+
+
     }
 }

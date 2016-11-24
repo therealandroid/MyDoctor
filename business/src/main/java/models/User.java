@@ -9,10 +9,8 @@ import com.google.gson.annotations.SerializedName;
 public class User {
 
     private long id;
-    @SerializedName("first_name")
+    @SerializedName("name")
     private String firstName;
-    @SerializedName("last_name")
-    private String lastName;
 
     private long crm;
     private String phone;
@@ -22,7 +20,6 @@ public class User {
     public User(String firstName, String lastName, String password, String phone, String email) {
         this.id = System.currentTimeMillis();
         this.firstName = firstName;
-        this.lastName = lastName;
         this.password = password;
         this.phone = phone;
         this.email = email;
@@ -50,14 +47,6 @@ public class User {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getPassword() {
