@@ -20,8 +20,12 @@ public class LocalPresenter {
     public LocalPresenter(){
     }
 
-    public void loadLocals(final LocalCallback callback) {
-        retrofit.create(LocalService.class).loadLocals()
+    public LocalPresenter(Retrofit retrofit) {
+        this.retrofit = retrofit;
+    }
+
+    public void loadLocals(long id, final LocalCallback callback) {
+        retrofit.create(LocalService.class).loadLocals(id)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<List<Local>>() {

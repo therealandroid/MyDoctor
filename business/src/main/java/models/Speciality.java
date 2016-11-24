@@ -4,7 +4,7 @@ package models;
  * Created by diogojayme on 10/13/16.
  */
 
-public class Specialties {
+public class Speciality {
     private int id;
     private String name;
 

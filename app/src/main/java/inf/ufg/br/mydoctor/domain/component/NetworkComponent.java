@@ -5,6 +5,8 @@ import javax.inject.Singleton;
 import dagger.Component;
 import inf.ufg.br.mydoctor.domain.modules.PresenterModule;
 import inf.ufg.br.mydoctor.ui.AuthenticationActivity;
+import inf.ufg.br.mydoctor.ui.locals.LocalsActivity;
+import inf.ufg.br.mydoctor.ui.speciality.SpecialityActivity;
 import module.NetModule;
 
 /**
@@ -15,4 +17,6 @@ import module.NetModule;
 @Component(modules = { NetModule.class, PresenterModule.class})
 public interface NetworkComponent {
     void inject(AuthenticationActivity authenticationActivity);
+    void inject(SpecialityActivity specialityActivity);
+    void inject(LocalsActivity localsActivity);
 }

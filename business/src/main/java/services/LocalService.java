@@ -4,6 +4,7 @@ import java.util.List;
 
 import models.Local;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import rx.Observable;
 
 /**
@@ -12,6 +13,6 @@ import rx.Observable;
 
 public interface LocalService {
 
-    @GET("/locals")
-    Observable<List<Local>> loadLocals();
+    @GET("/locals/{specialist_id}")
+    Observable<List<Local>> loadLocals(@Path("specialist_id") long id);
 }

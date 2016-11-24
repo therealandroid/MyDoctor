@@ -5,8 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import inf.ufg.br.mydoctor.R;
+import inf.ufg.br.mydoctor.ui.speciality.SpecialityActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -14,6 +19,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
     }
 
     @Override
@@ -32,5 +38,10 @@ public class HomeActivity extends AppCompatActivity {
 
     private void updateProfile() {
         startActivity(new Intent(this, UpdateProfileActivity.class));
+    }
+
+    @OnClick(R.id.book_container)
+    public void onAgendaClick(){
+        startActivity(new Intent(HomeActivity.this, SpecialityActivity.class));
     }
 }
